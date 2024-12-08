@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="310dp"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    style="@style/dialog_bg_change"
+    android:orientation="vertical"
+    android:gravity="center" >
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/writeTaskLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/list_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/task_text"
+            android:maxLines="1"
+            android:hint="List Name" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_task"
+        android:layout_gravity="end"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Save" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

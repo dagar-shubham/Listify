@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Listify</string>
+    <string name="spinner_prompt">Completed Tasks</string>
+</resources>

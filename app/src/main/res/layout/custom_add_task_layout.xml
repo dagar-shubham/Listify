@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog"
+    android:padding="20dp"
+    android:layout_width="310dp"
+    android:layout_height="wrap_content"
+    style="@style/dialog_bg_change">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/writeTaskLay"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/write_task"
+            style="@style/task_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Task"
+            android:maxLines="2" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/task_deadline"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/task_deadline"/>
+
+    <TextView
+        android:id="@+id/tView"
+        style="@style/headings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Task"
+        android:textAlignment="textStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/writePriorLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/writeTaskLay" >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/write_desc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/task_text"
+        android:maxLines="2"
+        android:hint="Description" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/save_task"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/writePriorLay" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:hint="Priority"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/writePriorLay"
+        app:layout_constraintTop_toBottomOf="@+id/writePriorLay" >
+
+        <AutoCompleteTextView
+            android:id="@+id/select_priority"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="12dp"
+            android:inputType="none"
+            style="@style/task_text"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_show_deadline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/writeTaskLay"
+        app:layout_constraintEnd_toEndOf="@+id/writeTaskLay"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/oulined_text_view"
+        android:gravity="center"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/show_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:theme="@style/calendar_text"
+            android:visibility="invisible"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:textSize="11sp"
+             />
+
+        <ImageView
+            android:id="@+id/cancel_deadline"
+            android:layout_width="13dp"
+            android:layout_height="13dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/cancel"/>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

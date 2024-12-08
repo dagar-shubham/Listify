@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:id="@+id/task_done"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="1dp"
+        android:src="@drawable/task_circle"
+        app:layout_constraintEnd_toStartOf="@+id/task_name"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/task_did"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="1dp"
+        android:visibility="invisible"
+        android:src="@drawable/task_completed"
+        app:layout_constraintEnd_toStartOf="@+id/task_name"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/task_done_anim"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:visibility="visible"
+        app:lottie_rawRes="@raw/task_done"
+        app:layout_constraintEnd_toStartOf="@+id/task_name"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false" />
+
+    <View
+        android:id="@+id/task_done_line"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        style="@style/task_done_line"
+        app:layout_constraintEnd_toEndOf="@id/task_priority"
+        app:layout_constraintStart_toStartOf="@+id/task_name"
+        app:layout_constraintTop_toTopOf="@id/task_name"
+        app:layout_constraintBottom_toBottomOf="@id/task_name"/>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/task_name"
+        style="@style/task_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/task_priority"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/task_done"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/task_priority"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="1"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/task_name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/task_des"
+        style="@style/task_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="20dp"
+        android:textSize="14sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toStartOf="@+id/task_priority"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/task_done"
+        app:layout_constraintTop_toBottomOf="@+id/task_name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/task_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:visibility="gone"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:theme="@style/oulined_text_view"
+        app:layout_constraintStart_toStartOf="@+id/task_name"
+        app:layout_constraintTop_toBottomOf="@+id/task_des" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

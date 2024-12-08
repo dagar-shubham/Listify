@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="orange">#F66827</color>
+    <color name="bluish_grey">#475B67</color>
+    <color name="blue">#15547A</color>
+    <color name="grey">#807777</color>
+    <color name="light_grey">#E7EAF6</color>
+    <color name="light_blue">#F2F8FC</color>
+    <color name="light_dark_blue">#E1E9ED</color>
+    <color name="whitish_blue">#C1CFDA</color>
+    <color name="black">#FF000000</color>
+    <color name="dark_black_shade">#1F1F1F</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="white_shade">#F4F3F3</color>
+    <color name="black_shade">#292828</color>
+    <color name="alag_black">#879393</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="task_menu_option_click_day">#BAB9B9</color>
+    <color name="task_menu_option_click_night">#5C5B5B</color>
+    <color name="task_menu_option_click_night_v2">#484747</color>
+    <color name="red">#D11818</color>
+</resources>

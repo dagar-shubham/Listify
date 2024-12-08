@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/background_change"
+    tools:context=".Activities.UpdateDeleteTask">
+
+    <ImageView
+        android:id="@+id/back_and_update"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="20dp"
+        android:padding="5dp"
+        style="@style/click_effect"
+        android:src="@drawable/back_arrow"/>
+
+    <ImageView
+        android:id="@+id/delete_task"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/trash"
+        android:padding="7dp"
+        style="@style/click_effect"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back_and_update">
+
+        <AutoCompleteTextView
+            android:id="@+id/priority"
+            style="@style/task_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="none"
+            android:textSize="12sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <View
+        android:id="@+id/task_done_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        style="@style/task_done_line"
+        app:layout_constraintStart_toStartOf="@+id/task_name"
+        app:layout_constraintEnd_toEndOf="@id/task_name"
+        app:layout_constraintTop_toTopOf="@+id/task_name"
+        app:layout_constraintBottom_toBottomOf="@id/task_name"/>
+
+    <EditText
+        android:id="@+id/task_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:layout_margin="20dp"
+        android:hint="Task"
+        android:textSize="30sp"
+        style="@style/task_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+    <LinearLayout
+        android:id="@+id/task_des_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/task_name"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/description"/>
+
+        <EditText
+            android:id="@+id/task_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="16sp"
+            style="@style/task_text"
+            android:hint="Description"
+            android:background="@color/transparent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/task_dealine_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/task_des_layout"
+        android:layout_margin="20dp">
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/task_deadline"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            style="@style/oulined_text_view"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/task_deadline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                style="@style/ShowDeadlineClickBgChange"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:text="Select Deadline" />
+
+            <ImageView
+                android:id="@+id/cancel_deadline"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:padding="8dp"
+                style="@style/click_effect"
+                android:src="@drawable/cancel"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        style="@style/todo_constraintBGChange"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/task_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            android:padding="5dp"
+            style="@style/ViewBgChange"
+            android:text="Mark Completed"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
